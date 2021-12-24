@@ -2,6 +2,11 @@
     margin-bottom: 75px;
 }
 
+.micro-post {
+    padding-bottom: 4rem;
+    padding-top: 4rem;
+}
+
 .post-feed {
     margin-bottom: 4rem;
 }

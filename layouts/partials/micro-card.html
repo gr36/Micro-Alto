@@ -1,12 +1,14 @@
-<header class="post-header">
-    <div class="post-meta">
-        <span class="post-meta-item post-meta-date">
-            <a href="{{ .Permalink }}">
-                <time datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">Posted on {{ .Date.Format "3:04 PM, Jan 2" }}</time>
-            </a>
-        </span>                
+<div class="micro-post">
+    <header class="post-header">
+        <div class="post-meta">
+            <span class="post-meta-item post-meta-date">
+                <a href="{{ .Permalink }}">
+                    <time datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">Posted on {{ .Date.Format "3:04 PM, Jan 2" }}</time>
+                </a>
+            </span>                
+        </div>
+    </header>
+    <div class="post-excerpt">
+    {{ .Content }}
     </div>
-</header>
-<div class="post-excerpt">
-{{ .Content }}
 </div>
