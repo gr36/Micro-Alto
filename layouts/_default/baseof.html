@@ -19,7 +19,7 @@
 
 <body>
     <div class="site">
-        {{> header}}
+        {{ partial "header.html" . }}
         <!-- currently not possible on micro.blog
         {{#is "home"}}
             {{#if @custom.show_featured_posts}}
@@ -28,7 +28,7 @@
         {{/is}}
         -->
         <div class="site-content">
-            {{{body}}}
+            {{ block "main" . }}{{ end }}
         </div>
         {{ partial "footer.html" . }}
     </div>
