@@ -1,33 +1,10 @@
-<article class="blog-post">
+<article class="post-feed">
     <div class="container medium">
-        <header class="post-header big-title">
-            {{ if .Title }}
-                <h2 class="post-title"><a href="{{ .Permalink }}" class="post-title-link">{{ .Title }}</a></h2>
-                    <div class="post-meta">
-                        <span class="post-meta-item post-meta-date">
-                            <time datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">Posted on {{ .Date.Format "3:04 PM, Jan 2" }}</time>
-                        </span>
-                        
-                    </div>
-        </header>
-            <div class="post-excerpt">
-                {{ .Summary }}
-            </div>
+        {{ if .Title }}
+            {{ partial "blog-card.html" . }} 
         {{ else }}
-                <div class="micro-post">
-                    <div class="post-meta">
-                        <span class="post-meta-item post-meta-date">
-                            <a href="{{ .Permalink }}">
-                                <time datetime="{{ .Date.Format "2006-01-02 15:04:05 -0700" }}">Posted on {{ .Date.Format "3:04 PM, Jan 2" }}</time>
-                            </a>
-                        </span>                
-                    </div>
-                </div>
-        </header>
-            <div class="post-excerpt">
-                {{ .Content }}
-            </div>
-            {{ end }}
+            {{ partial "micro-card.html" . }} 
+        {{ end }}
         {{ partial "post-footer.html" . }}
     </div>
 </article>
