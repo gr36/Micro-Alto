@@ -17,16 +17,10 @@
     {{ partial "head.html" . }}
 </head>
 
-<body>
+<body class="home-template">
     <div class="site">
         {{ partial "header.html" . }}
-        <!-- currently not possible on micro.blog
-        {{#is "home"}}
-            {{#if @custom.show_featured_posts}}
-                {{> featured}}
-            {{/if}}
-        {{/is}}
-        -->
+        
         <div class="site-content">
             {{ block "main" . }}{{ end }}
         </div>
