@@ -1,9 +1,8 @@
-<article class="{{post_class}}">
-    {{> post-media ratio="horizontal"}}
+<article class="post">
     <div class="container medium">
         {{ partial "post-header.html" . }}
             <div class="post-excerpt">
-                {{ .Excerpt }
+                {{ .Summary }}
             </div>
         {{ partial "post-footer.html" . }}
     </div>
