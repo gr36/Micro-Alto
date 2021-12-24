@@ -1,0 +1,14 @@
+<ul class="nav-list u-plain-list">
+					{{ if ne .IsHome true }}
+                    <li class="menu-item"><a href="/" class="menu-item-link"><span class="arrow">←</span> Home</a></li>
+                    {{ end }}
+
+	                {{ range .Site.Menus.main }}
+		            {{ if .Page.Params.redirect_url }}
+			        <li class="menu-item"><a href="{{ .Page.Params.redirect_url }}" class="menu-item-link">{{ .Name }}</a></li>
+		            {{ else }}
+			        <li class="menu-item"><a href="{{ .URL | relLangURL | safeURL }}" class="menu-item-link">{{ .Name }}</a></li>
+		            {{ end }}
+	                {{ end }}
+					<li class="menu-item"><a class="cta" href="https://micro.blog/{{ .Site.Author.username }}" rel="me">Also on Micro.blog</a></li>
+</ul>

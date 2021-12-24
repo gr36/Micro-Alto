@@ -2,13 +2,13 @@
     <div class="navbar">
         <div class="navbar-left">
             <div class="burger hidden-lg hidden-xl"></div>
-            {{> logo}}
+            {{ partial "logo.html" . }}
             <div class="sep hidden-xs hidden-sm hidden-sm"></div>
-            {{#if @site.navigation}}
+
                 <nav class="main-menu hidden-xs hidden-sm hidden-md">
-                    {{navigation}}
+                    {{ partial "menu.html" . }}
                 </nav>
-            {{/if}}
+
         </div>
         <div class="navbar-right">
             <div class="toggle-track">
