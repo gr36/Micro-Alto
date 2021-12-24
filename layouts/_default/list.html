@@ -1,12 +1,28 @@
-{{!< default}}
+{{ define "main" }}
 
 <div class="content-area">
     <main class="site-main">
         <div class="post-feed">
-            {{#foreach posts}}
-                {{> "loop"}}
-            {{/foreach}}
+            {{ if or .IsHome .Site.Params.paginate_categories }}
+	{{ $paginator := .Paginate (where .Data.Pages.ByDate.Reverse "Type" "post") }}
+	{{ $list := $paginator.Pages }}
+	{{ range $list  }}
+		{{ partial "loop.html" . }}
+	{{ end }}
+{{ else }}
+	{{ $list := where .Data.Pages.ByDate.Reverse "Type" "post" }}
+	{{ range $list  }}
+		{{ partial "loop.html" . }}
+	{{ end }}
+{{ end }}
         </div>
-        {{pagination}}
+        {{ if .IsHome }}
+        {{ if .Site.Params.paginate_home }}
+            {{ partial "pagination" . }}
+        {{ end }}
+    {{ else if .Site.Params.paginate_categories }}
+        {{ partial "pagination" . }}
+    {{ end }}
     </main>
 </div>
+{{ end }}
