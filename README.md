@@ -9,4 +9,4 @@ A clean, minimalist theme featuring a light and dark mode. Launch your online pu
 
 # Copyright & License
 
-Copyright (c) 2013-2021 Ghost Foundation - Released under the [MIT license](LICENSE).
+Released under the [MIT license](LICENSE).
